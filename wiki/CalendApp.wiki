@@ -1,0 +1,39 @@
+# Esta página recoge toda la información generada referente al proceso productivo vinculado al proyecto CalendApp: documentación + código
+
+= ACTAS =
+
+Relación de actas:
+
+Reparto de trabajo:
+
+----
+
+
+= DOCUMENTO DE ESPECIFICACIÓN DE REQUISITOS =
+
+Documento ERS:
+
+----
+
+= PLANIFICACIÓN DEL PROYECTO (PUD) = 
+
+Planificación de las iteraciones:
+
+Diagramas:
+
+----
+
+= CARACTERÍSTICAS DE CALIDAD DEL PRODUCTO = 
+
+Filosofía de calidad:
+
+----
+
+= MODELO DE MADUREZ = 
+
+Evaluación inicial/Final:
+
+Mejoras introducidas:
+
+----
+
