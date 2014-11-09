@@ -13,26 +13,18 @@ Reparto de trabajo:
 
 Documento ERS:
 
+
 ----
 
 = Planificación del proyecto según PUD = 
 
-Planificación de las iteraciones:
+Priorización y planificación de las iteraciones:
 
-Diagramas:
-
-----
-
-= Características de calidad del proyecto = 
-
-Filosofía de calidad:
 
 ----
 
-= MODELO DE MADUREZ = 
+= Tutorial de SVN = 
 
-Evaluación inicial/Final:
 
-Mejoras introducidas:
 
 ----
