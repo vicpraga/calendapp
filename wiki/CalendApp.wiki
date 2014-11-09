@@ -23,6 +23,10 @@ Priorización y planificación de las iteraciones:
 
 ----
 
+= Plan para la gestión de la configuración =
+
+----
+
 = Tutorial de SVN = 
 
 
