@@ -1,4 +1,4 @@
-# Esta página recoge toda la información generada referente al proceso productivo vinculado al proyecto CalendApp: documentación + código
+# Esta página recoge toda la información y artefactos generados, referente al proceso productivo vinculado al proyecto CalendApp
 
 = Actas =
 
