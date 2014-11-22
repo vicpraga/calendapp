@@ -29,6 +29,13 @@ https://drive.google.com/file/d/0B3JFn-Ociov-NEdIZmRLQU1rSlk/view?usp=sharing
 
 ----
 
+= Calidad de producto =
+
+Criterios de calidad aplibles al producto en desarrollo:
+https://drive.google.com/file/d/0B3JFn-Ociov-VktjVy0yeEc4UTA/view?usp=sharing
+
+----
+
 = Plan para la gestión de la configuración =
 
 Documento con el plan: https://drive.google.com/file/d/0B3JFn-Ociov-SC1Wa2pISHczN3c/view?usp=sharing
