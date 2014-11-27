@@ -7,4 +7,5 @@
   </parent>
   <artifactId>Iteracion3</artifactId>
   <packaging>pom</packaging>
+  <version>2.0</version>
 </project>
