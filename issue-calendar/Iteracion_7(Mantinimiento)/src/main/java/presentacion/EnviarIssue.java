@@ -61,7 +61,7 @@ public class EnviarIssue extends JFrame {
                 		tfMes.getSelectedItem().toString()+" Hora: "+tfHora.getSelectedItem().toString();
                 boolean i = false;
                  try {
-                        i = GestorIssues.send(new Issue(tfIssue.getText(), fecha, tfDuracion.getText()));
+                        i = GestorIssues.send(new Issue(tfIssue.getText(), fecha, Integer.getInteger(tfDuracion.getText())));
                     } catch (Exception e) {
                         System.out.println("Excepcion");
                         System.out.println(e.getMessage());

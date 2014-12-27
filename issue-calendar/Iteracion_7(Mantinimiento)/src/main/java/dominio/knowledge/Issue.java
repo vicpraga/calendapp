@@ -4,13 +4,13 @@ public class Issue {
 
     protected String issue;
     protected String fecha;
-    protected String duracion;
+    protected Integer duracion;
 
     public Issue(String issue) {
         this.issue = issue;
     }
 
-    public Issue(String issue, String fecha, String duracion) {
+    public Issue(String issue, String fecha, Integer duracion) {
         this.issue = issue;
         this.fecha = fecha;
         this.duracion = duracion;
@@ -24,7 +24,7 @@ public class Issue {
         return fecha;
     }
     
-    public String getduracion() {
+    public Integer getduracion() {
         return duracion;
     }
     

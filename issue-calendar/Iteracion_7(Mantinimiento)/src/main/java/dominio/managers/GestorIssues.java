@@ -18,7 +18,7 @@ public class GestorIssues {
        while (res.next()) {
            String issue = res.getString("issue");
            String fecha = res.getString("fecha");
-           String duracion = res.getString("duracion");
+           Integer duracion = res.getInt("duracion");
            
            Issue current = new Issue(issue, fecha, duracion);
            returned.addElement(current);

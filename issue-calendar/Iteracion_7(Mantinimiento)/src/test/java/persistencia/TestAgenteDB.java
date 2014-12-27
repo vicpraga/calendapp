@@ -87,7 +87,7 @@ public class TestAgenteDB {
 	
 	public void delete_from_issues(AgenteDB a, String fecha, String issue, Integer duracion){
 		String SQL_delete = "DELETE FROM Issues WHERE fecha='"+fecha+"' AND issue='"+issue+"' AND "+
-				"duración="+duracion+";";
+				"duracion="+duracion+";";
 		try{
 			a.delete(SQL_delete);
 		}catch(Exception e){
@@ -98,7 +98,7 @@ public class TestAgenteDB {
 	
 	public ResultSet select_from_issues(AgenteDB a, String fecha, String issue, Integer duracion){
 		String SQL_select = "SELECT * FROM Issues WHERE fecha='"+fecha+"' AND issue='"+issue+"' AND "+
-				"duración="+duracion+";";
+				"duracion="+duracion+";";
 		ResultSet rs = null;
 		try{
 			rs = a.select(SQL_select);
@@ -111,7 +111,7 @@ public class TestAgenteDB {
 	
 	public void update_issues(AgenteDB a, String newFecha, String issue, Integer duracion){
 		String SQL_update = "UPDATE Issues SET fecha='"+newFecha+"' WHERE issue='"+issue+"' AND "+
-				"duración="+duracion+";";
+				"duracion="+duracion+";";
 		try{
 			a.update(SQL_update);
 		}catch(Exception e){
@@ -135,7 +135,7 @@ public class TestAgenteDB {
 		try{
 			assertEquals("12-12-2012", rs.getString("fecha"));
 			assertEquals("myIssue", rs.getString("issue"));
-			assertEquals(30, rs.getInt("duración"));
+			assertEquals(30, rs.getInt("duracion"));
 		}catch(Exception e){
 			e.printStackTrace();
 			fail("Fail trying to assert.");
