@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 
 import dominio.managers.GestorUsuario;
-
+import dominio.knowledge.Usuario;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -91,7 +91,7 @@ public class Login extends JFrame {
                 String pass = textFieldPass.getText();
                 boolean i = false;
                 try {
-                    i = GestorUsuario.autenticar(log, pass);
+                    i = GestorUsuario.check(new Usuario(log, pass));
                 } catch (Exception e) {
                     System.out.println("excepcion");
                     textPaneEstado.setText("Excepcion");

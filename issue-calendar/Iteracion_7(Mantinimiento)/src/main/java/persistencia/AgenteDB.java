@@ -34,7 +34,7 @@ public class AgenteDB {
         mBD.close();
     }
 
-    public int insert(String SQL) throws SQLException, Exception {
+    public int insert(String SQL) throws Exception {
         conectar();
         Statement stmt = mBD.createStatement();
         int res = stmt.executeUpdate(SQL);
@@ -42,8 +42,16 @@ public class AgenteDB {
         desconectar();
         return res;
     }
+    
+    public int delete(String SQL) throws Exception{
+    	return insert(SQL);
+    }
+    
+    public int update(String SQL) throws Exception{
+    	return insert(SQL);
+    }
 
-	public ResultSet select(String SQL) throws Exception, SQLException {
+	public ResultSet select(String SQL) throws Exception{
         conectar();
         Statement sentencia = mBD.createStatement();
         ResultSet resultado = sentencia.executeQuery(SQL);

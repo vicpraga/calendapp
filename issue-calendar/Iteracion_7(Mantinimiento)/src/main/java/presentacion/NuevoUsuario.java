@@ -11,7 +11,7 @@ import java.awt.Color;
 import javax.swing.JTextPane;
 
 import dominio.managers.GestorUsuario;
-
+import dominio.knowledge.Usuario;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -65,7 +65,7 @@ public class NuevoUsuario extends JFrame {
                 boolean i = false;
 
                 try {
-                    i = GestorUsuario.autenticar(log, pass);
+                    i = GestorUsuario.check(new Usuario(log, pass));
                 } catch (Exception e) {
                     System.out.println("Excepcion");
                     textPane.setText("Excepcion");
@@ -76,7 +76,7 @@ public class NuevoUsuario extends JFrame {
                 } else {
 
                     try {
-                        i = GestorUsuario.nuevoUsuario(log, pass);
+                        i = GestorUsuario.send(new Usuario(log, pass));
                     } catch (Exception e) {
                         System.out.println("Excepcion");
                         textPane.setText("Excepcion");

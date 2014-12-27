@@ -14,6 +14,7 @@ import dominio.managers.GestorIssues;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Vector;
 
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
@@ -39,10 +40,10 @@ public class SiguienteIssue extends JFrame {
         JButton btnConsultar = new JButton("Consultar Issue");
         btnConsultar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                Issue siguiente=null;
+            	 Vector<Issue> siguiente=null;
                 try {
                 	String issue = tfIssue.getText();
-                    siguiente = GestorIssues.recuperar(issue);
+                    siguiente = GestorIssues.retrieve(new Issue(issue));
                 } catch (Exception e) {
                     System.out.println("Excepcion");
                     textPaneEstado.setText("Excepcion");
@@ -50,7 +51,10 @@ public class SiguienteIssue extends JFrame {
                 }
                 if (siguiente != null) {
                     System.out.println("Hay siguiente");
-                    textPaneEstado.setText("Issue: "+siguiente.getissue()+"\nRealizada el "+siguiente.getfecha()  +"       Durante: "+siguiente.getduracion()+" horas");
+                    while (!siguiente.isEmpty()){
+                    Issue i = siguiente.firstElement();
+                    textPaneEstado.setText("Issue: "+i.getissue()+"\nRealizada el "+i.getfecha()  +"       Durante: "+i.getduracion()+" horas");
+                    }
                 } else {
                     System.out.println("No hay siguiente");
                     textPaneEstado.setText("No hay siguiente");
