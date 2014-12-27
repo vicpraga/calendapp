@@ -33,5 +33,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SQLite"/>
+	<classpathentry kind="lib" path="/home/raul/Escritorio/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

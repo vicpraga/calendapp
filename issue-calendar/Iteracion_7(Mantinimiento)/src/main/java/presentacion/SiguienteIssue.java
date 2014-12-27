@@ -45,21 +45,16 @@ public class SiguienteIssue extends JFrame {
                 	String issue = tfIssue.getText();
                     siguiente = GestorIssues.retrieve(new Issue(issue));
                 } catch (Exception e) {
-                    System.out.println("Excepcion");
                     textPaneEstado.setText("Excepcion");
-                    System.out.println(e.getMessage());
                 }
                 if (siguiente != null) {
-                    System.out.println("Hay siguiente");
-                    while (!siguiente.isEmpty()){
-                    Issue i = siguiente.firstElement();
-                    textPaneEstado.setText("Issue: "+i.getissue()+"\nRealizada el "+i.getfecha()  +"       Durante: "+i.getduracion()+" horas");
+                    for(int index=0;index<siguiente.size();index++){
+                    	Issue i = siguiente.elementAt(index);
+                    	textPaneEstado.setText("Issue: "+i.getissue()+"\nRealizada el "+i.getfecha()  +"       Durante: "+i.getduracion()+" horas");
                     }
                 } else {
-                    System.out.println("No hay siguiente");
                     textPaneEstado.setText("No hay siguiente");
                 }
-
             }
         });
         btnConsultar.setBounds(245, 109, 147, 29);

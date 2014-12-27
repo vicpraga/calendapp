@@ -63,34 +63,21 @@ public class NuevoUsuario extends JFrame {
                 String log = textFieldLogin.getText();
                 String pass = textFieldPassword.getText();
                 boolean i = false;
-
                 try {
                     i = GestorUsuario.check(new Usuario(log, pass));
                 } catch (Exception e) {
-                    System.out.println("Excepcion");
-                    textPane.setText("Excepcion");
+                	e.printStackTrace();
                 }
                 if (i == true) {
-                    System.out.println("Autenticado");
                     textPane.setText("El Usuario Ya Existe");
                 } else {
-
                     try {
                         i = GestorUsuario.send(new Usuario(log, pass));
-                    } catch (Exception e) {
-                        System.out.println("Excepcion");
-                        textPane.setText("Excepcion");
-                    }
-                    if (i == true) {
-                        System.out.println("Insertado");
                         textPane.setText("Insertado");
-                    } else {
-                        System.out.println("No Insertado");
-                        textPane.setText("No Insertado");
+                    } catch (Exception e) {
+                        textPane.setText("El usuario ya existe.");
                     }
-
                 }
-
             }
         });
         btnAltaUsuario.setBounds(253, 76, 117, 29);

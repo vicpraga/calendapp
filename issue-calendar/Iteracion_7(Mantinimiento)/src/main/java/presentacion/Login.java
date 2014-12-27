@@ -93,11 +93,9 @@ public class Login extends JFrame {
                 try {
                     i = GestorUsuario.check(new Usuario(log, pass));
                 } catch (Exception e) {
-                    System.out.println("excepcion");
-                    textPaneEstado.setText("Excepcion");
+                    textPaneEstado.setText("Ha habido un error.");
                 }
                 if (i == true) {
-                    System.out.println("autenticado");
                     textPaneEstado.setText("Autenticado");
                     try {
                         SiguienteIssue frame = new SiguienteIssue();
@@ -106,9 +104,7 @@ public class Login extends JFrame {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }              
-          
                 } else {
-                    System.out.println("no autenticado");
                     textPaneEstado.setText("No Autenticado");
                 }
             }

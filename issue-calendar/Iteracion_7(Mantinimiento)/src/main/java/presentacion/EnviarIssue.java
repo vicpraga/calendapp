@@ -12,10 +12,15 @@ import dominio.managers.GestorIssues;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JComboBox;
 
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
+
+@SuppressWarnings("rawtypes")
 public class EnviarIssue extends JFrame {
 /**
 	 * 
@@ -23,17 +28,15 @@ public class EnviarIssue extends JFrame {
 	private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTextField tfIssue;
-    private final JLabel lblHora = new JLabel("Hora:");
     private JFormattedTextField tfDuracion;
-    private JComboBox<String> tfHora;
-    private JComboBox<String> tfMes;
-    private JComboBox<String> tfDia;
+    private JDateChooser calendario;
 
     /**
      * Create the frame.
      */
-    public EnviarIssue() {
-        
+
+	public EnviarIssue() {
+    	
         setTitle("Enviar Issue");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 484, 228);
@@ -44,7 +47,7 @@ public class EnviarIssue extends JFrame {
 
 
         JLabel lblIssue = new JLabel("Issue:");
-        lblIssue.setBounds(10, 93, 69, 16);
+        lblIssue.setBounds(12, 92, 69, 16);
         contentPane.add(lblIssue);
 
         tfIssue = new JTextField();
@@ -52,39 +55,27 @@ public class EnviarIssue extends JFrame {
         contentPane.add(tfIssue);
         tfIssue.setColumns(10);
 
-
+        
 
         JButton btnEnviar = new JButton("Enviar");
         btnEnviar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                String fecha="Dia: "+tfDia.getSelectedItem().toString()+" Mes: "+
-                		tfMes.getSelectedItem().toString()+" Hora: "+tfHora.getSelectedItem().toString();
-                boolean i = false;
+            	Calendar c = Calendar.getInstance();
+            	c.setTime(calendario.getDate());
+                String fecha = c.get(Calendar.DATE)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.YEAR);
                  try {
-                        i = GestorIssues.send(new Issue(tfIssue.getText(), fecha, Integer.getInteger(tfDuracion.getText())));
+                        GestorIssues.send(new Issue(tfIssue.getText(), fecha, Integer.getInteger(tfDuracion.getText())));
                     } catch (Exception e) {
-                        System.out.println("Excepcion");
-                        System.out.println(e.getMessage());
-                    }
-                    if (i == true) {
-                        System.out.println("Enviada");
-                    } else {
-                        System.out.println("No Enviada");
+                        e.printStackTrace();
                     }
                 }
-
-            
         });
         btnEnviar.setBounds(325, 149, 117, 29);
         contentPane.add(btnEnviar);
-        {
-        	lblHora.setBounds(325, 27, 69, 16);
-        	contentPane.add(lblHora);
-        }
         
         tfDuracion = new JFormattedTextField();
         tfDuracion.setColumns(10);
-        tfDuracion.setBounds(375, 87, 54, 28);
+        tfDuracion.setBounds(399, 88, 54, 28);
         contentPane.add(tfDuracion);
         
         JLabel lblDuracion = new JLabel("Duracion:");
@@ -95,35 +86,26 @@ public class EnviarIssue extends JFrame {
         for (int i = 1; i <= 24; ++i) {
         	horas.add(i);
         }
-        tfHora = new JComboBox(horas.toArray());
-        tfHora.setBounds(360, 21, 69, 28);
-        contentPane.add(tfHora);
         
         
         ArrayList meses = new ArrayList();
         for (int i = 1; i <= 12; ++i) {
         	meses.add(i);
         }
-        tfMes = new JComboBox(meses.toArray());
-        tfMes.setBounds(211, 21, 69, 28);
-        contentPane.add(tfMes);
         
         
         ArrayList dias = new ArrayList();
         for (int i = 1; i <= 31; ++i) {
         	dias.add(i);
         }
-        JLabel lblMes = new JLabel("Mes:");
-        lblMes.setBounds(176, 27, 69, 16);
-        contentPane.add(lblMes);
-        
-        tfDia = new JComboBox(dias.toArray());
-        tfDia.setBounds(70, 21, 69, 28);
-        contentPane.add(tfDia);
         
         JLabel lblDia = new JLabel("Dia:");
-        lblDia.setBounds(35, 27, 69, 16);
+        lblDia.setBounds(47, 27, 69, 28);
         contentPane.add(lblDia);
+        
+    	calendario = new JDateChooser();
+    	calendario.setBounds(97, 27, 117, 28);
+    	contentPane.add(calendario);
         
     }
 }
