@@ -8,7 +8,6 @@ import javax.swing.JButton;
 
 import java.awt.Color;
 
-import dominio.*;
 import dominio.knowledge.Issue;
 import dominio.managers.GestorIssues;
 

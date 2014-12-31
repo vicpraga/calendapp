@@ -15,12 +15,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.swing.JFormattedTextField;
-import javax.swing.JComboBox;
 
-import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
-@SuppressWarnings("rawtypes")
 public class EnviarIssue extends JFrame {
 /**
 	 * 
@@ -82,19 +79,19 @@ public class EnviarIssue extends JFrame {
         lblDuracion.setBounds(325, 93, 69, 16);
         contentPane.add(lblDuracion);
 
-        ArrayList horas = new ArrayList();
+        ArrayList<Integer> horas = new ArrayList<Integer>();
         for (int i = 1; i <= 24; ++i) {
         	horas.add(i);
         }
         
         
-        ArrayList meses = new ArrayList();
+        ArrayList<Integer> meses = new ArrayList<Integer>();
         for (int i = 1; i <= 12; ++i) {
         	meses.add(i);
         }
         
         
-        ArrayList dias = new ArrayList();
+        ArrayList<Integer> dias = new ArrayList<Integer>();
         for (int i = 1; i <= 31; ++i) {
         	dias.add(i);
         }

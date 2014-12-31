@@ -3,8 +3,6 @@ package persistencia;
 import static org.junit.Assert.*;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import org.junit.Test;
 
 public class TestAgenteDB {

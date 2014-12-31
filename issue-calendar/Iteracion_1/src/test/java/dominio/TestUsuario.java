@@ -1,16 +1,16 @@
 package dominio;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
+public class TestUsuario {
 
-public class TestIssue {
 
-
-	public int insert_issues(Issue i){
+	public int insert_user(Usuario u){
 		int res=0;
 		try{
-			res=i.insert();
+			res=u.insert();
 		}catch(Exception e){
 			e.printStackTrace();
 			fail("Fail trying to insert issue.");
@@ -18,13 +18,12 @@ public class TestIssue {
 		return res;
 	}
 	
-
 	@Test
-	public void test_insert_issue(){
+	public void test_insert_user(){
 		//Setup
-		Issue test=new Issue( "topic","12-12-2012", "23");
+		Usuario test=new Usuario("newUser","newPass");
 		//Execution
-		int res=insert_issues(test);
+		int res=insert_user(test);
 		//Oracle
 		try{
 			assertEquals(res, 1);
@@ -34,5 +33,5 @@ public class TestIssue {
 		}
 		//Tear down
 	}
-	
+
 }
