@@ -49,6 +49,10 @@ https://drive.google.com/file/d/0B3JFn-Ociov-Y0U0TmJZbkFpdEE/view?usp=sharing
 
 = Testing y mantenimiento = 
 
+Enunciado con las prácticas relativas a mantenimiento:https://drive.google.com/file/d/0B3JFn-Ociov-WGRPdFN4bEswelE/view?usp=sharing
+
+Plan de testing:https://drive.google.com/file/d/0B3JFn-Ociov-VG9GcmRXaF95bTQ/view?usp=sharing
+
 Plan de mantenimiento: https://drive.google.com/file/d/0B3JFn-Ociov-T3NkQlU4Y01fYnM/view?usp=sharing
 
 ----
